@@ -1,1 +1,19 @@
+﻿using MISA.AMIS.Common;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace MISA.AMIS.BL
+{
+    public interface IEmployeBL
+    {
+        /// <summary>
+        /// Lấy tất cả bản ghi
+        /// </summary>
+        /// <returns>Danh sách tất cả bàn ghi</returns>
+        public IEnumerable<Employee> GetAllRecords();
+
+    }
+}
