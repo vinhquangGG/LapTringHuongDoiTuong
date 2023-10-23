@@ -27,7 +27,7 @@ namespace Demo.LTHDT.Web.DL
             using (var mysqlConnection = new MySqlConnection(connectionString))
             {
 
-                var employees = mysqlConnection.Query<T>(storedProcedureName, commandType: System.Data.CommandType.StoredProcedure);
+                var employees = mysqlConnection.Query<Employee>(storedProcedureName, commandType: System.Data.CommandType.StoredProcedure);
                 return employees;
             }
 
