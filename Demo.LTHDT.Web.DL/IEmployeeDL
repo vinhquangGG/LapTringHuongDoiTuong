@@ -1,1 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace Demo.LTHDT.Web.DL
+{
+    public interface IEmployeeDL
+    {
+        /// <summary>
+        /// Lấy tất cả bản ghi
+        /// </summary>
+        /// <returns>Danh sách tất cả bàn ghi</returns>
+        public IEnumerable<Employee> GetAllEmployees();
+    }
+}
