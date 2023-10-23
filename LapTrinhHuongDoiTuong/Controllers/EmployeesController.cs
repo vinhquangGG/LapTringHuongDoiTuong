@@ -32,12 +32,7 @@ namespace LapTrinhHuongDoiTuong.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult(
-                AmisErrorCode.Exception,
-                Resource.DevMsg_Exception,
-                Resource.UserMsg_Exception,
-                Resource.MoreInfo_InsertFailed,
-                HttpContext.TraceIdentifier));
+                return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
     }
