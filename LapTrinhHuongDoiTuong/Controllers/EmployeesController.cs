@@ -26,7 +26,7 @@ namespace LapTrinhHuongDoiTuong.Controllers
         {
             try
             {
-                var employees = _baseBL.GetAllRecords();
+                var employees = _employeeBL.GetAllEmployees();
                 return StatusCode(StatusCodes.Status200OK, employees);
             }
             catch (Exception ex)
