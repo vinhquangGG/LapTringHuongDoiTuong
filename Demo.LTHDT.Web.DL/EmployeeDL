@@ -1,1 +1,36 @@
+﻿using Dapper;
+using MISA.AMIS.Common;
+using MISA.AMIS.Common.Resources;
+using MySqlConnector;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace Demo.LTHDT.Web.DL
+{
+    public class EmployeeDL : IEmployeeDL
+    {
+        #region Methods
+        /// <summary>
+        /// Lấy tất cả bản ghi
+        /// </summary>
+        /// <returns>Danh sách tất cả bàn ghi</returns>
+        public IEnumerable<Employee> GetAllEmployees()
+        {
+
+
+            var storedProcedureName = String.Format(Resource.Proc_GetAllEmployee, typeof(Employee).Name);
+
+            string connectionString = DataContext.MySqlConnectionString;
+            using (var mysqlConnection = new MySqlConnection(connectionString))
+            {
+
+                var employees = mysqlConnection.Query<T>(storedProcedureName, commandType: System.Data.CommandType.StoredProcedure);
+                return employees;
+            }
+
+        }
+    }
+}
